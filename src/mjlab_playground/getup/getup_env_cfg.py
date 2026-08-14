@@ -257,6 +257,7 @@ def make_getup_env_cfg() -> ManagerBasedRlEnvCfg:
         ls_iterations=20,
         impratio=10,
         cone="elliptic",
+        disableflags=("multiccd",),
       ),
     ),
     decimation=4,

@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "mjlab[cu128]",
+    "scipy>=1.18.0",
     "torch>=2.7.0,<2.10.0",
 ]
 
@@ -14,13 +15,13 @@ requires = ["uv_build>=0.8.18,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-mjlab = { git = "https://github.com/mujocolab/mjlab", rev = "f7fdb163b590e980865e59a5633ff5e1143553bd" }
+mjlab = { git = "https://github.com/mujocolab/mjlab", rev = "0fb8a681136be94ffc636a3dd423cabb97d91f10" }
 warp-lang = { index = "nvidia", marker = "sys_platform != 'darwin'" }
 torch = [
   { index = "pytorch-cu128", marker = "sys_platform != 'darwin'" },
 ]
 mujoco = { index = "mujoco" }
-mujoco-warp = { git = "https://github.com/google-deepmind/mujoco_warp", rev = "875c4caf06d71b12b2036c327e7a07ce08a78b9a" }
+mujoco-warp = { git = "https://github.com/google-deepmind/mujoco_warp", rev = "0a471b8173720404609ed1ba43471760b152a0cf" }
 
 [[tool.uv.index]]
 url = "https://pypi.org/simple"
@@ -42,7 +43,7 @@ explicit = true
 
 # The nightly index (py.mujoco.org) only has dev builds.
 [tool.uv]
-override-dependencies = ["mujoco>=3.6.0.dev0"]
+override-dependencies = ["mujoco>=3.6.0.dev0", "mujoco-warp"]
 
 [tool.ruff]
 indent-width = 2
