@@ -20,13 +20,13 @@ uv sync
 Train a task:
 
 ```bash
-uv run train <task-id> --num_envs 4096
+uv run train <task-id> ----env.scene.num-envs 4096
 ```
 
 Play back a trained policy:
 
 ```bash
-uv run play <task-id>
+uv run play <task-id> --checkpoint-file <file-path>
 ```
 
 ### Getup training
